@@ -3,6 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+// Connect controllers / Подключаем контроллеры
+
+use App\Http\Controllers\AuthController;
+
+// Authentification routes for guest (login, register) / Маршруты аутентификации для гостей (вход, регистрация)
+
+Route::middleware('guest')->group(function () {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/register', [AuthController::class, 'register']);
 });
