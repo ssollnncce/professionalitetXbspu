@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./backend-pxb
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    volumes:
+      - ./backend-pxb:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - professionalitet
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./backend-pxb:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+    networks:
+      - professionalitet
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: professionalitet_x_bspu
+      MYSQL_USER: ssollnncce
+      MYSQL_PASSWORD: gha!z26
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - professionalitet
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      PMA_USER: ssollnncce
+      PMA_PASSWORD: gha!z26
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    networks:
+      - professionalitet
+
+  frontend:
+    build:
+      context: ./frontend-pxb
+      dockerfile: Dockerfile
+    container_name: vue_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend-pxb:/app
+    command: npm run dev
+    networks:
+      - professionalitet
+
+volumes:
+  dbdata:
+
+networks:
+  professionalitet:
+    driver: bridge
