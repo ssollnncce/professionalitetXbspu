@@ -10,9 +10,9 @@
 - **Docker:** Docker Compose (Laravel, Vue, MySQL, PhpMyAdmin, Nginx)
 - **Аутентификация:** Laravel Breeze + Sanctum
 
-## Автор
+## Авторы
 
 Разработано для дипломного проекта:  
 **Центр Педагогических компетенций Профессионалитет.**  
-Design (Behance):  
+Design (Behance): [egielf](https://www.behance.net/egielf)  
 Developer (GitHub): [ssollnncce](https://github.com/ssollnncce)  
