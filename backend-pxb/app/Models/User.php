@@ -9,10 +9,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Testing\Fluent\Concerns\Has;
 use Laravel\Sanctum\HasApiTokens;
 
+use Illuminate\Auth\Passwords\CanResetPassword;
+
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.

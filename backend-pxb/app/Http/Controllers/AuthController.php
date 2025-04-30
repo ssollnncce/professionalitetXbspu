@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * Login user / Авторизация пользователя
+     */
+
     public function login(Request $request)
     {
         // Get data for login / Получаем данные для авторизации
@@ -49,6 +53,10 @@ class AuthController extends Controller
         }
 
     }
+
+    /**
+     * Register user / Регистрация пользователя
+     */
 
     public function register(RegisterRequest $request)
     {
@@ -86,4 +94,76 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+    /**
+     * Logout user / Выход пользователя
+     */
+
+    public function logout(Request $request)
+    {
+        // Logout user / Выход пользователя
+        Auth::user()->tokens()->delete();
+
+        return response()->json([
+            'message' => 'User logged out successfully / Пользователь успешно вышел из системы',
+        ], 200);
+    }
+
+    /**
+     * Forgot password / Забыли пароль
+     */
+    public function forgotPassword(Request $request){
+        // Get data for forgot password / Получаем данные для сброса пароля
+        $credentials = $request->validate([
+            'email' => 'required|email',
+        ]);
+        // Get email from database / Получаем email из базы данных
+        $user = User::where('email', $credentials['email'])->first();
+
+        // Check if user exists / Проверяем, существует ли пользователь
+        if (!$user) {
+            // Response if user not found / Ответ, если пользователь не найден
+            return response()->json([
+                'message' => 'User not found / Пользователь не найден',
+            ], 404);
+        } else {
+            // Send reset password link / Отправляем ссылку для сброса пароля
+            $user->sendPasswordResetNotification($user->createToken('auth_token')->plainTextToken);
+            return response()->json([
+                'message' => 'Password reset link sent to your email / Ссылка для сброса пароля отправлена на вашу электронную почту',
+            ], 200);
+        }
+    }
+
+    /**
+     * Reset password / Сброс пароля
+     */
+    public function resetPassword(Request $request){
+        // Get data for reset password / Получаем данные для сброса пароля
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:8|confirmed',
+            'token' => 'required|string',
+        ]);
+
+        // Get user by email / Получаем пользователя по email
+        $user = User::where('email', $credentials['email'])->first();
+
+        // Check if user exists / Проверяем, существует ли пользователь
+        if (!$user) {
+            // Response if user not found / Ответ, если пользователь не найден
+            return response()->json([
+                'message' => 'User not found / Пользователь не найден',
+            ], 404);
+        } else {
+            // Reset password / Сброс пароля
+            $user->password = Hash::make($credentials['password']);
+            $user->save();
+
+            return response()->json([
+                'message' => 'Password reset successfully / Пароль успешно сброшен',
+            ], 200);
+        }
+    }
+
 }
