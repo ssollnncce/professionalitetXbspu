@@ -139,4 +139,30 @@ class AuthController extends Controller
             'message' => 'Invalid or expired token / Неверный или истекший токен',
         ], 400);
     }
+
+    public function changePassword(Request $request)
+    {
+        $credentials = $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+        if (!$user) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        if (!Hash::check($credentials['current_password'], $user->password)) {
+            return response()->json([
+                'message' => 'Current password is incorrect / Текущий пароль неверен',
+            ], 401);
+        }
+
+        $user->password = Hash::make($credentials['new_password']);
+        $user->save();
+
+        return response()->json([
+            'message' => 'Password changed successfully / Пароль успешно изменен',
+        ], 200);
+    }
 }

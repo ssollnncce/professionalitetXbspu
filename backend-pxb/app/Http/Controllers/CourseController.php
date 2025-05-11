@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\CourseApplication;
+
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -88,6 +91,40 @@ class CourseController extends Controller
         return response()->json([
             'message' => 'Course retrieved successfully / Курс успешно получен',
             'data' => $formattedCourse,
+        ])->setStatusCode(200, );
+    }
+
+    public function bookCourse(Request $request, $id)
+    {
+        //Get course by id / Получаем курс по id
+
+        $course = Course::findOrFail($id);
+
+        $user = Auth::user();
+
+        // Book the course / Бронируем курс
+
+        $book = CourseApplication::create([
+            'user_id' => $user->id,
+            'course_id' => $course->id,
+        ]);
+
+        // Return the response / Возвращаем ответ
+
+        return response()->json([
+            'message' => 'Course booked successfully / Курс успешно забронирован',
+            'data' => [
+                'id' => $book->id,
+
+                'course_id' => $course->id,
+                'user_id' => $user->id,
+                'status' => $book->status,
+
+                'description' => [
+                    'course_name' => $course->name,
+                    'user_name' => $user->full_name,
+                ],
+            ],
         ])->setStatusCode(200, );
     }
 }

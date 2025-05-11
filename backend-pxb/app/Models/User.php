@@ -58,4 +58,8 @@ class User extends Authenticatable
     {
         return "{$this->first_name} {$this->last_name} {$this->patronymic}";
     }
+
+    public function courses(){
+        return $this->belongsToMany(Course::class);
+    }
 }
