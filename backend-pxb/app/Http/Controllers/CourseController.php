@@ -127,4 +127,9 @@ class CourseController extends Controller
             ],
         ])->setStatusCode(200, );
     }
+
+    public function confirm(Request $request)
+    {
+        echo 'confirm';
+    }
 }

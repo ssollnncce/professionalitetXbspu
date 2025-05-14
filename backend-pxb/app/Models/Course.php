@@ -20,4 +20,9 @@ class Course extends Model
     public function courseFamily(){
         return $this->belongsTo(CourseFamily::class, 'course_family_id');
     }
+
+    public function courseSignups()
+    {
+        return $this->hasMany(CourseSignup::class, 'course_id');
+    }
 }

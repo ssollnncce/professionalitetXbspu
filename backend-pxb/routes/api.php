@@ -49,3 +49,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 });
+
+Route::post('/course-application/confirm', [CourseController::class, 'confirm'])
+    ->name('course-application.confirm')
+    ->middleware('auth');

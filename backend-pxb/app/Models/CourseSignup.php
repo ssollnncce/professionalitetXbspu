@@ -12,6 +12,6 @@ class CourseSignup extends Model
     }
     public function user()
     {
-        return $this->belongsToMany(User::class, 'users_id');
+        return $this->belongsTo(User::class, 'id');
     }
 }

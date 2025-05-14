@@ -35,6 +35,7 @@ use MoonShine\UI\Components\{Breadcrumbs,
     Layout\TopBar,
     Layout\Wrapper,
     When};
+use App\MoonShine\Resources\CourseSignupResource;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -51,7 +52,10 @@ final class MoonShineLayout extends AppLayout
             MenuGroup::make('Курсы', [
                 MenuItem::make('Список курсов', CourseResource::class),
                 MenuItem::make('Заявки на курсы', CourseApplicationResource::class),
-            ])
+                MenuItem::make('Запись на курсы', CourseSignupResource::class),
+            ]),
+            MenuGroup::make('Настройки', [
+            ]),
         ];
     }
 
