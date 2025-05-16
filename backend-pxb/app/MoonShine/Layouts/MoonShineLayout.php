@@ -55,7 +55,8 @@ final class MoonShineLayout extends AppLayout
                 MenuItem::make('Запись на курсы', CourseSignupResource::class),
             ]),
             MenuGroup::make('Настройки', [
-            ]),
+            ])
+                ->icon('Logo', true, 'icons')
         ];
     }
 
@@ -72,5 +73,14 @@ final class MoonShineLayout extends AppLayout
     public function build(): Layout
     {
         return parent::build();
+    }
+
+    protected function getLogoComponent(): Logo {
+        
+        return Logo::make(
+            $this->getHomeUrl(),
+            $this->getLogo(),
+            $this->getLogo(small: true),
+        );
     }
 }

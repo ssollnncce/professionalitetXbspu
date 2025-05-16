@@ -46,10 +46,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/account/profile', [ProfileController::class, 'getUserProfile']);
     Route::get('/account/courses', [ProfileController::class, 'getUserCourses']);
     Route::post('/account/profile', [ProfileController::class, 'updateUserProfile']);
-
-
 });
-
-Route::post('/course-application/confirm', [CourseController::class, 'confirm'])
-    ->name('course-application.confirm')
-    ->middleware('auth');

@@ -49,6 +49,7 @@ class CourseController extends Controller
                 'price' => $course->price,
                 'duration' => $course->duration,
                 'start_date' => $course->start_date->format('d-m-Y'),
+                'age' => $course->age,
             ];
         });
 
@@ -84,6 +85,7 @@ class CourseController extends Controller
             'price' => $course->price,
             'duration' => $course->duration,
             'start_date' => $course->start_date->format('d-m-Y'),
+            'age' => $course->age,
         ];
 
         // Return the response / Возвращаем ответ
@@ -126,10 +128,5 @@ class CourseController extends Controller
                 ],
             ],
         ])->setStatusCode(200, );
-    }
-
-    public function confirm(Request $request)
-    {
-        echo 'confirm';
     }
 }

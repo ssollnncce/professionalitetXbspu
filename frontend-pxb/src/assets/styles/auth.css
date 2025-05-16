@@ -1,0 +1,337 @@
+header {
+    background-color: #D9D9D9; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1E1E1E; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: #1E1E1E; 
+    text-decoration: none;
+}
+
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+
+.ask-question {
+    margin-top: 50px;
+}
+
+.ask-question p {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ask-question a {
+    display: inline-block;
+    background-color: white;
+    color: #2962ff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+
+
+.teachers-section-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.teachers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.teacher {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.teacher-photo {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.teacher-name {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.contacts-page {
+    background: url("image/img1.png") center/cover no-repeat; 
+    padding: 30px 20px;
+    text-align: center;
+    min-height: 50vh; 
+    box-sizing: border-box; 
+}
+
+.contacts-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+#map {
+    width: 1660px;
+    height: 100px;
+  }
+
+
+footer {
+    background-color: #0E559A; 
+    color: #fff;
+    padding: 30px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 250px; 
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column p {
+    margin-bottom: 5px;
+}
+
+.footer-column form {
+    display: flex;
+    align-items: center;
+}
+
+.footer-column input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    width: 150px;
+    font-size: 14px;
+}
+
+.footer-column button[type="submit"] {
+    padding: 8px 12px;
+    background-color: #fff;
+    color: #0E559A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.login-container {
+    background: url("../images/auth-back.png") center/cover no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: px;
+    box-sizing: border-box;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1E1E1E;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    color: #2962ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.registration-container {
+    background: url("../images/auth-back.png") center/cover no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.registration-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #1E1E1E;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.registration-links {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.registration-links span {
+    font-size: 14px;
+    margin-right: 5px;
+    color: #1E1E1E;
+}
+
+.registration-links a {
+    text-decoration: none;
+    color: #1E1E1E;
+    font-size: 14px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    color: #2962ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/*Вывод ошибок*/
+.loginerror{
+    color: #d32d2f;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+/*Адаптивность*/
+@media (max-width: 768px) {
+    .course {
+        width: 90%;
+        min-width: auto;
+    }
+}

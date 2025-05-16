@@ -25,6 +25,7 @@ class ProfileController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'profile_photo_path' => $user->profile_photo_path,
+                'date_of_birth' => $user->date_of_birth,
             ],
         ])->setStatusCode(200);
     }
@@ -36,6 +37,7 @@ class ProfileController extends Controller
             'last_name' => 'required|string|max:255',
             'patronymic' => 'nullable|string|max:255',
             'profile_photo_path' => 'nullable|string|max:255',
+            'date_of_birth' => 'nullable|date',
         ]);
 
         // Get the authenticated user / Получаем авторизованного пользователя
@@ -52,6 +54,7 @@ class ProfileController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'profile_photo_path' => $user->profile_photo_path,
+                'date_of_birth' => $user->date_of_birth,
             ],
         ])->setStatusCode(200);
     }

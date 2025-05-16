@@ -10,6 +10,7 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 use Laravel\Sanctum\HasApiTokens;
 
 use Illuminate\Auth\Passwords\CanResetPassword;
+use App\Notifications\CustomResetPassword;
 
 class User extends Authenticatable
 {
@@ -61,5 +62,10 @@ class User extends Authenticatable
 
     public function courses(){
         return $this->belongsToMany(Course::class);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CustomResetPassword($token, $this->email));
     }
 }

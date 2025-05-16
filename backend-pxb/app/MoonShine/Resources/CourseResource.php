@@ -63,7 +63,8 @@ class CourseResource extends ModelResource
                     ])->toArray()),
                 Text::make('Цена', 'price'),
                 Date::make('Дата начала', 'start_date'),
-                Text::make('Продолжительность', 'duration')
+                Text::make('Продолжительность', 'duration'),
+                Text::make('Возрастные ограничения', 'age')
             ])
         ];
     }
@@ -76,6 +77,14 @@ class CourseResource extends ModelResource
         return [
             ID::make(),
             Text::make('Название', 'name'),
+            Text::make('Описание', 'description'),
+            Text::make('Путь к изображению', 'image_path'),
+            Text::make('Группа курсов', 'courseFamily.name'),
+            Text::make('Преподаватель', 'teacher.full_name'),
+            Text::make('Цена', 'price'),
+            Date::make('Дата начала', 'start_date'),
+            Text::make('Продолжительность', 'duration'),
+            Text::make('Возрастные ограничения', 'age'),
             HasMany::make('Записанные пользователи', 'courseSignups', function () {
                 return [
                     Text::make('Имя', 'user.full_name'),

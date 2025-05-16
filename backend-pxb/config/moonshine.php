@@ -20,8 +20,8 @@ use MoonShine\Laravel\Pages\LoginPage;
 use MoonShine\Laravel\Pages\ProfilePage;
 
 return [
-    'title' => env('MOONSHINE_TITLE', 'MoonShine'),
-    'logo' => 'vendor/moonshine/logo.svg',
+    'title' => env('MOONSHINE_TITLE', 'Профессионалитет X БГПУ'),
+    'logo' => 'vendor/moonshine/assets/logo.svg',
     'logo_small' => 'vendor/moonshine/logo-small.svg',
 
 

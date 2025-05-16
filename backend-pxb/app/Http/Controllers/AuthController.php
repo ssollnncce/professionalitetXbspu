@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use App\Models\User;
 use App\Http\Requests\RegisterRequest;
+use App\Notifications\CustomResetPassword;
 
 class AuthController extends Controller
 {
@@ -19,11 +20,16 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
+        ], [
+            'email.required' => 'Пожалуйста, введите email',
+            'email.email' => 'Некорректный формат email',
+            'password.required' => 'Пожалуйста, введите пароль',
+            'password.string' => 'Пароль должен быть строкой',
         ]);
 
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Invalid credentials / Неверные учетные данные',
+                'message' => 'Неправильный логин или пароль',
             ], 401);
         }
 
@@ -36,6 +42,7 @@ class AuthController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'token' => $user->createToken('auth_token')->plainTextToken,
+                'date_of_birth' => $user->date_of_birth,
             ],
         ], 200);
     }
@@ -97,6 +104,7 @@ class AuthController extends Controller
         ]);
 
         $status = Password::sendResetLink(['email' => $credentials['email']]);
+
 
         if ($status === Password::RESET_LINK_SENT) {
             return response()->json([

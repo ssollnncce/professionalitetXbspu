@@ -30,6 +30,8 @@ use App\Mail\ApplicationConfirmed;
 use App\Mail\ApplicationReject;
 use Illuminate\Support\Facades\Mail;
 
+use Carbon\Carbon;
+
 
 /**
  * @extends ModelResource<CourseApplication>
@@ -57,7 +59,9 @@ class CourseApplicationResource extends ModelResource
                 ->badge(fn($status, $field) => $status === 'Awaiting confirmation' ? 'yellow' : ($status === 'Confirmed' ? 'green' : 'red')),
             Date::make('Дата создания', 'created_at')
                 ->format('d.m.Y')
-                ->sortable()
+                ->sortable(),
+            Text::make('Возрастные ограничения курса', 'course.age'),
+            Date::make('Дата рождения', 'user.date_of_birth')
         ];
     }
 
