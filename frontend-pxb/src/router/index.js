@@ -6,6 +6,10 @@ import RegisterView from '../views/RegisterView.vue'
 import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
 import ResetPasswordView from '@/views/PasswordResetView.vue'
 import PasswordResetView from '@/views/PasswordResetView.vue'
+import CoursesView from '@/views/CoursesView.vue'
+import CourseDetailView from '@/views/CourseDetailView.vue'
+import ProdileEditView from '@/views/ProdileEditView.vue'
+import ProfileCoursesView from '@/views/ProfileCoursesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +43,26 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfileView,
+    },
+    {
+      path: '/profile/edit',
+      name: 'profile-edit',
+      component: ProdileEditView,
+    },
+    {
+      path: '/profile/courses',
+      name: 'profile-courses',
+      component: ProfileCoursesView,
+    },
+    {
+      path: '/courses',
+      name: 'courses',
+      component: CoursesView,
+    },
+    {
+      path: '/courses/:id',
+      name: 'course-detail',
+      component: CourseDetailView,
     }
   ],
 })

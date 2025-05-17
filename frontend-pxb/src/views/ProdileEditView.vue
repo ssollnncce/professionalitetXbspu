@@ -1,7 +1,7 @@
 <script setup>
 import Header from '../components/Header.vue';
 import ProfileNav from '@/components/ProfileNav.vue';
-import UserInfo from '@/components/UserInfo.vue';
+import UserEdit from '@/components/UserEdit.vue';
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import UserInfo from '@/components/UserInfo.vue';
   <div class="profile-layout">
     <ProfileNav />
     <div class="profile-content">
-        <UserInfo />
+        <UserEdit />
     </div>
   </div>
 </template>

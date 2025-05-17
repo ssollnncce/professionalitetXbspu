@@ -14,6 +14,7 @@ use App\Http\Controllers\TeacherController;
 
 Route::get('/courses', [CourseController::class, 'getAllCourses']);
 Route::get('/courses/{id}', [CourseController::class, 'getCourseDetail']);
+Route::get('/course-families', [CourseController::class, 'getCourseFamilies']);
 
 Route::get('/teachers', [TeacherController::class, 'getAllTeachers']);
 

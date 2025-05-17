@@ -129,4 +129,13 @@ class CourseController extends Controller
             ],
         ])->setStatusCode(200, );
     }
+
+    public function getCourseFamilies()
+    {
+        $families = \App\Models\CourseFamily::all(['id', 'name']);
+        return response()->json([
+            'message' => 'Course families retrieved successfully',
+            'data' => $families,
+        ], 200);
+    }
 }

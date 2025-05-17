@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CourseApplication;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -25,7 +26,7 @@ class ProfileController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'profile_photo_path' => $user->profile_photo_path,
-                'date_of_birth' => $user->date_of_birth,
+                'date_of_birth' => $user->date_of_birth ? Carbon::parse($user->date_of_birth)->format('d.m.Y') : null,
             ],
         ])->setStatusCode(200);
     }
@@ -38,6 +39,17 @@ class ProfileController extends Controller
             'patronymic' => 'nullable|string|max:255',
             'profile_photo_path' => 'nullable|string|max:255',
             'date_of_birth' => 'nullable|date',
+        ], [
+            'first_name.required' => 'Пожалуйста, введите имя',
+            'first_name.string' => 'Имя должно быть строкой',
+            'first_name.max' => 'Имя не должно превышать 255 символов',
+
+            'last_name.required' => 'Пожалуйста, введите фамилию',
+            'last_name.string' => 'Фамилия должна быть строкой',
+            'last_name.max' => 'Фамилия не должна превышать 255 символов',
+
+            'patronymic.string' => 'Отчество должно быть строкой',
+            'patronymic.max' => 'Отчество не должно превышать 255 символов',
         ]);
 
         // Get the authenticated user / Получаем авторизованного пользователя
