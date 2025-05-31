@@ -50,6 +50,8 @@ class CourseController extends Controller
                 'duration' => $course->duration,
                 'start_date' => $course->start_date->format('d-m-Y'),
                 'age' => $course->age,
+                'capacity' => $course->capacity,
+                'freeSlots' => $course->remaining_slots,
             ];
         });
 
@@ -105,6 +107,10 @@ class CourseController extends Controller
         $user = Auth::user();
 
         // Book the course / Бронируем курс
+
+        if (!$course->hasAvailibleSlots()) {
+            return response()->json(['error' => 'Нет свободных мест на курсе'], 400);
+        }
 
         $book = CourseApplication::create([
             'user_id' => $user->id,

@@ -26,7 +26,7 @@ class ProfileController extends Controller
                 'email' => $user->email,
                 'phone' => $user->phone,
                 'profile_photo_path' => $user->profile_photo_path,
-                'date_of_birth' => $user->date_of_birth ? Carbon::parse($user->date_of_birth)->format('d.m.Y') : null,
+                'date_of_birth' => $user->date_of_birth ? Carbon::parse($user->date_of_birth)->format('Y-m-d') : null,
             ],
         ])->setStatusCode(200);
     }

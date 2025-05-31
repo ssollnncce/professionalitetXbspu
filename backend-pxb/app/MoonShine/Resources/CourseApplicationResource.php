@@ -41,7 +41,7 @@ class CourseApplicationResource extends ModelResource
     protected string $model = CourseApplication::class;
 
     protected string $title = 'Заявки на курсы';
-    
+
 
 
     /**
@@ -122,8 +122,8 @@ class CourseApplicationResource extends ModelResource
                     )
                     ->method('confirmApplication'),
                 ActionButton::make('Отклонить')
-                    ->error() 
-                    ->method('rejectApplication')  
+                    ->error()
+                    ->method('rejectApplication')
             );
     }
 
@@ -131,7 +131,7 @@ class CourseApplicationResource extends ModelResource
     {
         $id = $request->get('resourceItem'); // получаем id текущей записи
         $item = CourseApplication::findOrFail($id);
-    
+
         $item->update(['status' => 'Confirmed']);
 
         DB::table('course_signups')->insert([
@@ -142,8 +142,8 @@ class CourseApplicationResource extends ModelResource
         ]);
 
         // Отправляем письмо пользователю
-        $user = $item->user; // Предполагается, что у CourseApplication есть связь с User
-        $course = $item->course; // Предполагается, что у CourseApplication есть связь с Course
+        $user = $item->user;
+        $course = $item->course;
 
         Mail::to($user->email)->send(new ApplicationConfirmed($user, $course));
     }
@@ -152,12 +152,12 @@ class CourseApplicationResource extends ModelResource
     {
         $id = $request->get('resourceItem'); // получаем id текущей записи
         $item = CourseApplication::findOrFail($id);
-    
+
         $item->update(['status' => 'Decline']);
-    
+
         // Отправляем письмо пользователю
-        $user = $item->user; // Предполагается, что у CourseApplication есть связь с User
-        $course = $item->course; // Предполагается, что у CourseApplication есть связь с Course
+        $user = $item->user;
+        $course = $item->course;
 
         Mail::to($user->email)->send(new ApplicationReject($user, $course));
     }

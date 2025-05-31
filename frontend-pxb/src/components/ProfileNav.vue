@@ -1,25 +1,45 @@
 <template>
-    <nav class="profile-nav">
-        <div class="profile-links">
-            <RouterLink to="/profile" class="profile-link" :class="{ active: $route.path === '/profile' }">
-                Личная информация
-            </RouterLink>
-            <RouterLink to="/profile/courses" class="profile-link" :class="{ active: $route.path === '/profile/courses' }">
-                Курсы
-            </RouterLink>
-        </div>
-        <div class="profile-nav-bottom">
-            <button class="logout-btn" @click="logout">Выйти</button>
-        </div>
-    </nav>
+  <div class="profile-navigation">
+    <ul class="profile-navigation__list">
+      <li>
+        <RouterLink
+          to="/profile/info"
+          class="profile-navigation__item"
+          exact
+        >
+          <font-awesome-icon :icon="['far', 'user']" />
+          <span>Личная информация</span>
+        </RouterLink>
+      </li>
+      <li>
+        <RouterLink
+          to="/profile/courses"
+          class="profile-navigation__item"
+          exact
+        >
+          <font-awesome-icon :icon="['far', 'file-lines']" />
+          <span>Мои курсы</span>
+        </RouterLink>
+      </li>
+    </ul>
+    <div class="profile-navigation__logout">
+      <button @click="logout">
+        <font-awesome-icon :icon="['fas', 'arrow-left']" />
+        <span>Выйти</span>
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
+import api from '../api';
 import { RouterLink } from 'vue-router';
-import api from '@/api';
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
   name: 'ProfileNav',
+  components: { FontAwesomeIcon },
+
   methods: {
     async logout() {
       try {
@@ -27,103 +47,70 @@ export default {
         await api.post('/logout', {}, {
           headers: {
             Authorization: `Bearer ${token}`,
-          },
+          }
         });
+
         localStorage.removeItem('auth_token');
-        this.$router.push('/');
+        this.$router.push('/login');
       } catch (error) {
-        console.error('Logout failed:', error);
+        console.log('Ошибка при выходе из системы:', error);
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
-.profile-nav {
-    position: fixed;
-    top: 88px; /* высота вашей шапки */
-    left: 0;
-    width: 260px;
-    height: calc(100vh - 88px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: none;
-    border-right: 1px solid #e0e4ef;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-    z-index: 100;
+.profile-navigation {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
-
-.profile-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.profile-navigation__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-
-.profile-link {
-    display: block;
-    color: #000;
-    text-decoration: none;
-    font-size: 1.125rem; /* 18px */
-    font-weight: 400;
-    padding: 18px 20px;
-    border-radius: 16px;
-    transition: background 0.18s, font-weight 0.18s;
-    background: none;
+.profile-navigation__item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #222;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.2s;
 }
-
-.profile-link.active {
-    background: #f5f6f8;
-    font-weight: 700;
+.profile-navigation__item svg {
+  margin-right: 1rem;
+  width: 28px;
+  height: 28px;
+  color: #3b82f6;
 }
-
-.profile-link:hover:not(.active) {
-    background: #f0f1f3;
+.profile-navigation__item.router-link-exact-active {
+  background: #f3f6fa;
+  font-weight: 700;
 }
-
-.logout-btn {
-    width: 100%;
-    border: none;
-    background: #fbeaea;
-    color: #d32d2f;
-    padding: 18px 20px;
-    border-radius: 16px;
-    font-size: 1.125rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background 0.18s, color 0.18s;
+.profile-navigation__item:hover {
+  background: #f3f6fa;
 }
-
-.logout-btn:hover {
-    background: #f5c6cb;
-    color: #a71d2a;
+.profile-navigation__logout {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #eee;
 }
-
-@media (max-width: 900px) {
-    .profile-nav {
-        position: static;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e0e4ef;
-        flex-direction: row;
-        padding: 0.5rem 0.5rem;
-        gap: 0.3rem;
-        justify-content: flex-start;
-    }
-    .profile-links {
-        flex-direction: row;
-        gap: 0.3rem;
-    }
-    .profile-link,
-    .logout-btn {
-        font-size: 1rem;
-        padding: 0.7rem 0.7rem;
-        text-align: center;
-        border-radius: 10px;
-    }
+.profile-navigation__logout button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+}
+.profile-navigation__logout svg {
+  margin-right: 0.5rem;
 }
 </style>

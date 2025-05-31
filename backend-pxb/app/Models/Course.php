@@ -25,4 +25,13 @@ class Course extends Model
     {
         return $this->hasMany(CourseSignup::class, 'course_id');
     }
+
+    public function hasAvailibleSlots() {
+        return $this->courseSignups()->count() < $this->capacity;
+    }
+
+    public function getRemainingSlotsAttribute(): int
+    {
+        return max(0, $this->capacity - $this->courseSignups()->count());
+    }
 }
