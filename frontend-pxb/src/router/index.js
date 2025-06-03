@@ -10,6 +10,7 @@ import CourseDetailView from '@/views/CourseDetailView.vue'
 import userInfo from "@/components/UserInfo.vue";
 import UserCourses from "@/components/UserCourses.vue";
 import changePassword from "@/components/ChangePassword.vue";
+import DraftsView from "@/views/DraftsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -67,6 +68,11 @@ const router = createRouter({
       path: '/courses/:id',
       name: 'course-detail',
       component: CourseDetailView,
+    },
+    {
+      path: '/drafts',
+      name: 'drafts',
+      component: DraftsView,
     }
   ],
 })

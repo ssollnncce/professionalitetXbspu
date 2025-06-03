@@ -34,6 +34,12 @@
                 <span class="course-meta-item">Возраст: {{ course.age }}+</span>
                 <span class="course-meta-item">Цена: {{ course.price }} ₽</span>
                 <span class="course-meta-item">Старт: {{ course.start_date }}</span>
+                <span
+                  class="course-meta-item"
+                  :class="{ 'slots-low': course.freeSlots < 5 }"
+                >
+                  Мест: {{ course.freeSlots }}/{{ course.capacity }}
+                </span>
               </div>
               <div class="course-actions">
                 <RouterLink :to="`/courses/${course.id}`" class="course-detail-btn">
@@ -52,8 +58,11 @@
         <div v-if="showModal" class="modal-overlay" @click.self="closeBookingModal">
           <div class="modal-window">
             <h3>Записаться на курс</h3>
+            <p style="margin-bottom: 0.5rem; color: #274698; font-weight: 600;">
+              Вы уверены, что хотите записаться на курс?
+            </p>
             <p v-if="selectedCourse">
-              Вы уверены, что хотите записаться на курс <b>{{ selectedCourse.name }}</b>?
+              <b>{{ selectedCourse.name }}</b>
             </p>
             <div v-if="bookingError" class="modal-error">{{ bookingError }}</div>
             <div v-if="bookingSuccess" class="modal-success">{{ bookingSuccess }}</div>
@@ -365,6 +374,11 @@ export default {
 .modal-success {
   color: #388e3c;
   margin-top: 1rem;
+}
+
+.slots-low {
+  color: #d32d2f;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {

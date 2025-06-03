@@ -61,7 +61,13 @@ class CourseApplicationResource extends ModelResource
                 ->format('d.m.Y')
                 ->sortable(),
             Text::make('Возрастные ограничения курса', 'course.age'),
-            Date::make('Дата рождения', 'user.date_of_birth')
+            Date::make('Дата рождения', 'user.date_of_birth'),
+            // Новое поле для отображения оставшихся мест
+            Text::make('Свобных мест', 'course.remaining_slots')
+                ->sortable()
+                ->badge(fn($remainingSlots) => $remainingSlots > 0 ? 'green' : 'red'),
+            Text::make('Количество мест', 'course.capacity'),
+
         ];
     }
 
