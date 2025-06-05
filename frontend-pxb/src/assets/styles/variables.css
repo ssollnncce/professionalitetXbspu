@@ -1,0 +1,10 @@
+:root {
+    /* Цвета */
+    --primary-color: #0040C1;
+    --secondary-color: #25221F;
+
+    /* Типография */
+    --font-size-s: 1rem;
+    --font-size-m: 100rem;
+    --font-size-l: 10rem;
+}

@@ -1,9 +1,9 @@
 <template>
-  <Header />
+  <HomeViewDraft />
 </template>
 
 <script setup>
-import Header from '../components/Header.vue';
+import HomeViewDraft from "@/views/HomeViewDraft.vue";
 
 </script>
 

@@ -41,6 +41,7 @@ class CourseController extends Controller
                 'course_family' => [
                     'id' => $course->courseFamily->id,
                     'name' => $course->courseFamily->name,
+                    'color' => $course->courseFamily->theme_color,
                 ],
                 'teacher' => [
                     'id' => $course->teacher->id,
