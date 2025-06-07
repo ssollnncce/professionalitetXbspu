@@ -5,12 +5,11 @@ import ProfileView from '../views/ProfileView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
 import PasswordResetView from '@/views/PasswordResetView.vue'
-import CoursesView from '@/views/CoursesView.vue'
 import CourseDetailView from '@/views/CourseDetailView.vue'
 import userInfo from "@/components/UserInfo.vue";
 import UserCourses from "@/components/UserCourses.vue";
 import changePassword from "@/components/ChangePassword.vue";
-import DraftsView from "@/views/DraftsView.vue";
+import CoursesView from "@/views/CoursesView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,7 +71,7 @@ const router = createRouter({
     {
       path: '/drafts',
       name: 'drafts',
-      component: DraftsView,
+      component: CoursesView,
     }
   ],
 })

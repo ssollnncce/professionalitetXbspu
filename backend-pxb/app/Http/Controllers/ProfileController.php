@@ -71,7 +71,7 @@ class ProfileController extends Controller
         ])->setStatusCode(200);
     }
 
-    public function getUserCourses()
+    public function getUserCourses(): \Illuminate\Http\JsonResponse
     {
         // Get the authenticated user / Получаем авторизованного пользователя
         $user = Auth::user();
@@ -87,7 +87,7 @@ class ProfileController extends Controller
                     $query->select('id', 'first_name', 'last_name', 'patronymic');
                 },
                 'course.courseFamily' => function ($query) {
-                    $query->select('id', 'name');
+                    $query->select('id', 'name', 'theme_color');
                 },
             ])
             ->get();
@@ -98,6 +98,7 @@ class ProfileController extends Controller
                 'course_id' => $course->course_id,
                 'user_id' => $course->user_id,
                 'status' => $course->status,
+                'color' => $course->course->courseFamily->theme_color,
                 'description' => [
                     'name' => $course->course->name,
                     'description' => $course->course->description,

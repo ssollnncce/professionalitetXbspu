@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\MoonShine\Layouts;
 
 use MoonShine\MenuManager\MenuGroup;
-use MoonShine\MenuManager\MenuItem; 
+use MoonShine\MenuManager\MenuItem;
 use App\MoonShine\Resources\CourseResource;
 use App\MoonShine\Resources\CourseApplicationResource;
 
@@ -65,9 +65,8 @@ final class MoonShineLayout extends AppLayout
      */
     protected function colors(ColorManagerContract $colorManager): void
     {
-        parent::colors($colorManager);
-
-        // $colorManager->primary('#00000');
+        $colorManager->set('primary', '0, 64, 193');
+        $colorManager->set('secondary', '51, 103, 204');
     }
 
     public function build(): Layout
@@ -76,7 +75,7 @@ final class MoonShineLayout extends AppLayout
     }
 
     protected function getLogoComponent(): Logo {
-        
+
         return Logo::make(
             $this->getHomeUrl(),
             $this->getLogo(),
