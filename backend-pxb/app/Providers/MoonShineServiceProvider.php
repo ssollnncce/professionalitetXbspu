@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use MoonShine\Contracts\ColorManager\ColorManagerContract;
 use MoonShine\Contracts\Core\DependencyInjection\ConfiguratorContract;
 use MoonShine\Contracts\Core\DependencyInjection\CoreContract;
 use MoonShine\Laravel\DependencyInjection\MoonShine;
@@ -21,9 +22,8 @@ use App\MoonShine\Resources\CourseSignupResource;
 class MoonShineServiceProvider extends ServiceProvider
 {
     /**
-     * @param  MoonShine  $core
-     * @param  MoonShineConfigurator  $config
-     *
+     * @param MoonShine $core
+     * @param MoonShineConfigurator $config
      */
     public function boot(CoreContract $core, ConfiguratorContract $config): void
     {
@@ -40,6 +40,6 @@ class MoonShineServiceProvider extends ServiceProvider
             ->pages([
                 ...$config->getPages(),
             ])
-        ; 
-    } 
+        ;
+    }
 }

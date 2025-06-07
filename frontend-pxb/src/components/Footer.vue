@@ -60,7 +60,7 @@ export default {
 
       <div class="footer-bottom text-center py-3 mt-4">
         <hr class="footer-divider">
-        <p class="mb-0">&copy; 2025 Колледж БГПУ. Все права защищены.</p>
+        <p class="mb-0">&copy; 2025 ЦПК Профессионалитет и Колледж БГПУ. Все права защищены.</p>
       </div>
     </div>
   </footer>
