@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('http://profxbspu.ssollnncce.ru')],
+    'allowed_origins' => ['http://profxbspu.ssollnncce.ru', 'http://profxbspuadmin.ssollnncce.ru'],
 
     'allowed_origins_patterns' => [],
 
