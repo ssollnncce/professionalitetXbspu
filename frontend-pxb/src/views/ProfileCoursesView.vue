@@ -23,6 +23,7 @@ import UserCourses from '@/components/UserCourses.vue';
   flex: 1;
   margin-left: 260px; /* Добавлен отступ для фиксированной навигации */
   padding: 2rem 2rem 2rem 0;
+  width: calc(100vw - 260px);
 }
 
 @media (max-width: 900px) {

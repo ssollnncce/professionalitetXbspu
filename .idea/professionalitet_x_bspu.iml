@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/backend-pxb/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/backend-pxb/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/backend-pxb/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/backend-pxb/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/backend-pxb/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/fruitcake/php-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/guzzlehttp/uri-template" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/laravel/prompts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/flysystem-local" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/lee-to/fast-attributes" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/lee-to/laravel-package-command" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/moonshine/moonshine" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/moonshine/ru" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/psr-http-message-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/backend-pxb/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

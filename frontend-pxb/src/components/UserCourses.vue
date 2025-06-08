@@ -9,12 +9,9 @@ const error = ref(null);
 onMounted(async () => {
   loading.value = true;
   try {
-    const response = await api.get('/account/courses', {
-        headers: {
-            Authorization: `Bearer ${localStorage.getItem('auth_token')}`,
-        },
-    });
+    const response = await api.get('/account/courses');
     courses.value = response.data.inprocess_courses;
+    console.log(response.data.inprocess_courses);
   } catch (e) {
     error.value = 'Ошибка загрузки курсов';
   } finally {
@@ -30,86 +27,67 @@ onMounted(async () => {
             <div v-if="courses.length === 0" class="courses-empty">
                 Вы пока не записаны ни на один курс.
             </div>
-            <div v-else class="courses-list">
-                <div v-for="course in courses" :key="course.id" class="course-card">
-                    <img v-if="course.description.image_path" :src="course.description.image_path" alt="course image" class="course-image"/>
-                    <div class="course-info">
-                        <h3 class="course-name">{{ course.description.name }}</h3>
-                        <p class="course-desc">{{ course.description.description }}</p>
-                            <div class="course-meta">
-                                <span>Преподаватель: {{ course.description.teacher }}</span>
-                                <span>Длительность: {{ course.description.duration }}</span>
-                                <span>Направление: {{ course.description.course_family }}</span>
-                            </div>
-                        <span class="course-status">Статус: {{ course.status }}</span>
-                    </div>
+          <div class="courses-list_items">
+            <div class="courses-list_item"  v-for="course in courses" :key="course.id">
+              <div class="courses_item-image">
+                <div class="course_item-image-color" :style="{ backgroundColor: course.color }"></div>
+                <div class="course_item-title">
+                  <p>{{course.description.name}}</p>
                 </div>
+              </div>
+              <div class="course_item-description">
+                <p>{{course.description.teacher}}</p>
+                <p>{{course.description.description}}</p>
+                <p>Статус вашей заявки: {{course.status}}</p>
+              </div>
             </div>
+          </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.courses-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+@import '../assets/styles/variables.css';
+
+.courses-list_items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+  padding: 0 5rem;
+  color: white;
 }
-.courses-loading,
-.courses-error,
-.courses-empty {
-  margin: 2rem 0;
-  color: #888;
-  text-align: center;
-}
-.courses-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-.course-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 350px;
-  min-height: 180px;
-}
-.course-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 1rem;
-  background: #f3f3f3;
-}
-.course-info {
-  flex: 1;
-}
-.course-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-.course-desc {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-.course-meta {
-  font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 0.5rem;
+
+.courses-list_item {
+  border-radius: 0.8rem;
+  background-color: var(--secondary-color);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  box-sizing: border-box;
 }
-.course-status {
-  font-size: 0.9rem;
-  color: #1976d2;
-  font-weight: 500;
+
+.courses_item-image {
+  position: relative;
+  height: 10rem;
+}
+
+.course_item-image-color {
+  width: 100%;
+  height: 100%;
+}
+
+.course_item-title {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  padding: 1rem;
+  text-align: right;
+  font-weight: bold;
+}
+
+.course_item-description {
+  padding: 1rem;
+  flex-grow: 1;
 }
 </style>

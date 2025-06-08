@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:stable
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./frontend-pxb/dist:/var/www/frontend
+      - ./backend-pxb:/var/www/backend
+    depends_on:
+      - php
+      - node
+
+  php:
+    build:
+      context: ./backend-pxb
+      dockerfile: Dockerfile-production
+    volumes:
+      - ./backend-pxb:/var/www/backend
+    environment:
+      - APP_ENV=production
+    working_dir: /var/www/backend
+
+  node:
+    build:
+      context: ./frontend-pxb
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend-pxb:/app
+    command: ["npm", "run", "build"]
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: professionalitet_x_bspu
+      MYSQL_USER: ssollnncce
+      MYSQL_PASSWORD: gha!z26
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
