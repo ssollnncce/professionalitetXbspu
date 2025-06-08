@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 const api = axios.create({
   baseURL: 'http://profxbspuadmin.ssollnncce.ru/api', // URL к Laravel API
@@ -11,10 +12,18 @@ const web = axios.create({
 });
 
 api.interceptors.request.use((config) => {
+  // получаем токен из cookie
+  const csrfToken = Cookies.get('XSRF-TOKEN');
   const token = localStorage.getItem('auth_token');
+
+  if (csrfToken) {
+    config.headers['X-XSRF-TOKEN'] = csrfToken;
+  }
+
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
   return config;
 }, (error) => {
   return Promise.reject(error);
