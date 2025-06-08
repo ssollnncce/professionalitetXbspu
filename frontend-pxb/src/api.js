@@ -11,9 +11,8 @@ const web = axios.create({
   withCredentials: true, // если используешь куки и sanctum
 });
 
-api.interceptors.request.use(async (config) => {
+api.interceptors.request.use((config) => {
   // получаем токен из cookie
-  await web.get('sanctum/csrf-cookie');
   const csrfToken = Cookies.get('XSRF-TOKEN');
   const token = localStorage.getItem('auth_token');
 
