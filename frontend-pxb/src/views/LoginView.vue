@@ -21,8 +21,7 @@
 
 <script>
 import { RouterLink } from 'vue-router';
-import api from '@/api';
-import { web } from '@/api.js';
+import api, { web } from '@/api';
 import '../assets/styles/auth.css';
 
 export default {
