@@ -25,12 +25,11 @@ services:
     working_dir: /var/www/backend
 
   node:
-    build:
-      context: ./frontend-pxb
-      dockerfile: Dockerfile
+    image: node:18-alpine
+    working_dir: /app
     volumes:
       - ./frontend-pxb:/app
-    command: ["npm", "run", "build"]
+    command: sh -c "npm ci && npm run build"
 
   mysql:
     image: mysql:8.0
