@@ -48,8 +48,8 @@ export default {
         await api.post('/logout', {}, { withCredentials: true });
 
         localStorage.removeItem('auth_token');
-        Cookies.removeItem('professionalitet_x_bspu_session');
-        Cookies.removeItem('XSRF-TOKEN');
+        Cookies.remove('professionalitet_x_bspu_session');
+        Cookies.remove('XSRF-TOKEN');
         this.$router.push('/login');
       } catch (error) {
         console.log('Ошибка при выходе из системы:', error);
