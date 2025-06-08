@@ -90,10 +90,6 @@ class AuthController extends Controller
         // Удаляем все токены пользователя (если используем Sanctum для API)
         Auth::user()->tokens()->delete();
 
-        // Инвалидируем сессию, если используется сессионная аутентификация
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
         // Возвращаем успешный ответ
         return response()->json([
             'message' => 'User logged out successfully / Пользователь успешно вышел из системы',
