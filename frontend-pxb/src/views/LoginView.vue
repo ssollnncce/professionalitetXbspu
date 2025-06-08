@@ -39,7 +39,9 @@ export default {
       this.generalError = '';
 
       try {
-        await web.get('/sanctum/csrf-cookie');
+        await web.get('/sanctum/csrf-cookie', {
+          withCredentials: true
+        });
         const response = await api.post('/login', {
           email: this.email,
           password: this.password,
