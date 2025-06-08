@@ -21,7 +21,7 @@
 
 <script>
 import { RouterLink } from 'vue-router';
-import api from '@/api';
+import api, { web } from '@/api';
 import '../assets/styles/auth.css';
 
 export default {
@@ -39,6 +39,7 @@ export default {
       this.generalError = '';
 
       try {
+        await web.get('/sanctum/csrf-cookie');
         const response = await api.post('/login', {
           email: this.email,
           password: this.password,
