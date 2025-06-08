@@ -42,7 +42,7 @@ export default {
       this.generalError = '';
       this.successMessage = '';
       try {
-        await api.post('/forgot-password', { email: this.email });
+        await api.post('/forgot-password',  { email: this.email }, { withCredentials: true });
         this.successMessage = 'Ссылка для сброса пароля отправлена на ваш email';
       } catch (error) {
         if (error.response && error.response.status === 422) {

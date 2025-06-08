@@ -90,7 +90,7 @@ export default {
           email: this.email,
           password: this.password,
           password_confirmation: this.password_confirmation,
-        });
+        }, { withCredentials: true });
         this.$router.push('/');
       } catch (error) {
         if (error.response) {

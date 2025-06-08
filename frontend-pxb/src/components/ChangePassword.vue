@@ -38,11 +38,7 @@ export default {
     async changePassword() {
       try {
         const token = localStorage.getItem('auth_token');
-        const response = await api.post('change-password', this.form, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
+        const response = await api.post('change-password', this.form, { withCredentials: true });
         this.message = 'Пароль успешно изменён';
         this.form.current_password = '';
         this.form.new_password = '';

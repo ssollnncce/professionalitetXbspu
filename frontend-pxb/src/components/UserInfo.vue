@@ -70,18 +70,14 @@ export default {
   methods: {
     async getUserInfo() {
       const token = localStorage.getItem('auth_token');
-      const response = await api.get('/account/profile', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      const response = await api.get('/account/profile', { withCredentials: true });
       this.userdata = response.data.data;
       this.originalUserdata = JSON.parse(JSON.stringify(this.userdata));
     },
     async saveChanges() {
       const token = localStorage.getItem('auth_token');
       try {
-        await api.post('/account/profile', this.userdata, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        await api.post('/account/profile', this.userdata, { withCredentials: true });
         this.originalUserdata = JSON.parse(JSON.stringify(this.userdata));
         alert('Данные успешно сохранены');
       } catch (error) {

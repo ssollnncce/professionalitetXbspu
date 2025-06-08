@@ -66,7 +66,7 @@ export default {
           token,
           password: this.password,
           password_confirmation: this.password_confirmation,
-        });
+        }, { withCredentials: true });
         this.successMessage = 'Пароль успешно изменён. Теперь вы можете войти.';
         setTimeout(() => {
           this.$router.push('/login');

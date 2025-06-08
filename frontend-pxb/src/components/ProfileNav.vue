@@ -44,11 +44,7 @@ export default {
     async logout() {
       try {
         const token = localStorage.getItem('auth_token');
-        await api.post('/logout', {}, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          }
-        });
+        await api.post('/logout', {}, { withCredentials: true });
 
         localStorage.removeItem('auth_token');
         this.$router.push('/login');
