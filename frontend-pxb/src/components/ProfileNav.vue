@@ -35,6 +35,7 @@
 import api from '../api';
 import { RouterLink } from 'vue-router';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Cookies from "js-cookie";
 
 export default {
   name: 'ProfileNav',
@@ -47,6 +48,8 @@ export default {
         await api.post('/logout', {}, { withCredentials: true });
 
         localStorage.removeItem('auth_token');
+        Cookies.removeItem('professionalitet_x_bspu_session');
+        Cookies.removeItem('XSRF-TOKEN');
         this.$router.push('/login');
       } catch (error) {
         console.log('Ошибка при выходе из системы:', error);
