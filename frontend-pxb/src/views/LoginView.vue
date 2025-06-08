@@ -22,6 +22,7 @@
 <script>
 import { RouterLink } from 'vue-router';
 import api from '@/api';
+import web from '@/api.js';
 import '../assets/styles/auth.css';
 
 export default {
@@ -40,7 +41,7 @@ export default {
 
       try {
         // Сначала получаем CSRF cookie
-        await api.get('/sanctum/csrf-cookie', { withCredentials: true });
+        await web.get('/sanctum/csrf-cookie', { withCredentials: true });
 
         // Затем делаем запрос на логин с передачей куки
         const response = await api.post('/login', {
