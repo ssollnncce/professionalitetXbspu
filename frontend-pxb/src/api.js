@@ -20,4 +20,5 @@ api.interceptors.request.use((config) => {
   return Promise.reject(error);
 });
 
+export { web };
 export default api;
