@@ -39,24 +39,26 @@ export default {
       this.generalError = '';
 
       try {
+        // Сначала получаем CSRF cookie
+        await api.get('/sanctum/csrf-cookie', { withCredentials: true });
+
+        // Затем делаем запрос на логин с передачей куки
         const response = await api.post('/login', {
           email: this.email,
           password: this.password,
-        });
+        }, { withCredentials: true });
 
-        // Сохраняем токен
+        // Сохраняем токен (если нужен)
         localStorage.setItem('auth_token', response.data.data.token);
 
-        // Переходим на страницу аккаунта (или куда нужно)
+        // Переходим на главную страницу или другую
         this.$router.push('/');
 
       } catch (error) {
         if (error.response) {
           if (error.response.status === 422) {
-            // Ошибки валидации
             this.errors = error.response.data.errors || {};
           } else if (error.response.status === 401) {
-            // Ошибка авторизации
             this.generalError = error.response.data.message || 'Неверный логин или пароль';
           } else {
             this.generalError = 'Произошла ошибка, попробуйте позже';
@@ -65,7 +67,7 @@ export default {
           this.generalError = 'Нет ответа от сервера';
         }
       }
-    },
+    }
   },
   mounted() {
     // Проверяем, есть ли токен в localStorage
