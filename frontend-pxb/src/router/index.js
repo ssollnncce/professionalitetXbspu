@@ -10,6 +10,8 @@ import userInfo from "@/components/UserInfo.vue";
 import UserCourses from "@/components/UserCourses.vue";
 import changePassword from "@/components/ChangePassword.vue";
 import CoursesView from "@/views/CoursesView.vue";
+import TeachersListView from "@/views/TeachersListView.vue";
+import ContactsView from "@/views/ContactsView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +74,16 @@ const router = createRouter({
       path: '/drafts',
       name: 'drafts',
       component: CoursesView,
+    },
+    {
+      path: '/teachers',
+      name: 'teachers',
+      component: TeachersListView,
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: ContactsView,
     }
   ],
 })

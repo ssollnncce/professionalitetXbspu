@@ -243,4 +243,14 @@ export default {
   color: #d32d2f;
   font-weight: 700;
 }
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .courses-list_items {
+    padding: 0 1rem; /* Уменьшите отступы на мобильных устройствах */
+  }
+  .courses-list_item {
+    width: 100%; /* Задайте ширину 100% для мобильных устройств */
+  }
+}
 </style>

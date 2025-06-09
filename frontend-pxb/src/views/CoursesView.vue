@@ -39,11 +39,31 @@ export default {
 </script>
 
 <style scoped>
-  .main-courses {
+.main-courses {
     padding-top: 90px;
     display: flex;
-  }
-  .course-content {
-    width: calc(100vw - 383px);
-  }
+    flex-direction: row;
+}
+
+.courses-navigation {
+    width: 25%;
+}
+
+.course-content {
+    width: 75%;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+    .main-courses {
+        flex-direction: column;
+    }
+    .courses-navigation {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .course-content {
+        width: 100%;
+    }
+}
 </style>

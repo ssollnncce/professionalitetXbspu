@@ -73,7 +73,7 @@ export default {
   background-color: var(--primary-color);
   color: white;
   padding: 3rem 0 0;
-  margin-top: 5rem;
+  margin-top: 0;
 }
 
 .footer-title {

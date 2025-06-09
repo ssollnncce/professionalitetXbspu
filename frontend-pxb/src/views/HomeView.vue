@@ -103,6 +103,32 @@ export default {
       </section>
     </div>
   </section>
+  <section class="questions-page">
+        <h1 class="questions-title">Вопросы</h1>
+
+        <div class="questions-container">
+            <div class="question-item">
+                <span class="question-number">1</span>
+                <p>Сколько по времени длится урок?</p>
+                <p>Каждый урок длится 90 минут, перерыв длится 10 минут.</p>
+            </div>
+            <div class="question-item">
+                <span class="question-number">2</span>
+                <p>Какие есть возрастные ограничения?</p>
+                <p>У нас есть курсы для детей от 6-10 лет, а также от 11-17 лет</p>
+            </div>
+            <div class="question-item">
+                <span class="question-number">3</span>
+                <p>Есть ли пробный урок?</p>
+                <p>Да, есть пробный урок.</p>
+            </div>
+            <div class="question-item">
+                <span class="question-number">4</span>
+                <p>Сколько по времени длится урок?</p>
+                <p>Каждый урок длится 90 минут, перерыв длится 10 минут.</p>
+            </div>
+        </div>
+    </section>
 
   <Footer />
 </template>
@@ -110,21 +136,23 @@ export default {
 <style scoped>
 @import '../assets/styles/variables.css';
 
-  .main-content {
+.main-content {
     padding-top: 90px;
     width: 100%;
-  }
+    box-sizing: border-box;
+}
 
-  /* Стили для баннера */
-  .banner {
+/* Стили для баннера */
+.banner {
     position: relative;
-  }
-  #banner-image {
+    width: 100%;
+}
+#banner-image {
     height: calc(100vh - 90px);
     width: 100%;
     display: block;
-  }
-  .banner-content {
+}
+.banner-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -133,53 +161,53 @@ export default {
     font-size: 24px;
     font-weight: bold;
     z-index: 2;
-  }
-  .banner-content_text {
+}
+.banner-content_text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     gap: 1rem;
-  }
-  .banner-content_text h1 {
+}
+.banner-content_text h1 {
     text-align: center;
-  }
-  .banner-content_text a {
+}
+.banner-content_text a {
     text-decoration: none;
     color: white;
     padding: 0.4rem 4rem;
     border: 1px solid white;
     border-radius: 0.8rem;
-    font-weight: 400;
-  }
+}
 
-  /* Секция контактов */
-  .contacts {
+/* Секция контактов */
+.contacts {
     background: #25221F;
     padding: 7rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  .contacts_text {
+    width: 100%;
+}
+.contacts_text {
     padding: 0 15rem;
-  }
-  .contacts_text p {
+}
+.contacts_text p {
     text-align: center;
-  }
-  .contacts_text-feedback{
+}
+.contacts_text-feedback {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
-  }
-  .contacts-list  {
+}
+.contacts-list {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-  }
-  .contacts_text-item {
+}
+.contacts_text-item {
     padding: 0.5rem 1.5rem;
     border: 1px solid white;
     border-radius: 0.8rem;
@@ -187,73 +215,145 @@ export default {
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-  }
-  .contacts_text-item a {
+}
+.contacts_text-item a {
     text-decoration: none;
     color: white;
-  }
-  #contacts-courses {
+}
+#contacts-courses {
     text-decoration: none;
     color: black;
     padding: 0.5rem 11rem;
     background: white;
     border-radius: 0.8rem;
-  }
+}
 
-  /* Список курсов */
+/* Список курсов */
 .courses-list_items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 2rem;
-  padding: 0 15rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
+    padding: 0 15rem;
 }
 
 .courses-list_item {
-  border-radius: 0.8rem;
-  background-color: var(--secondary-color);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+    border-radius: 0.8rem;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .courses_item-image {
-  position: relative;
-  height: 10rem;
+    position: relative;
+    height: 10rem;
 }
 
 .course_item-image-color {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .course_item-title {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  color: white;
-  padding: 1rem;
-  text-align: right;
-  font-weight: bold;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: white;
+    padding: 1rem;
+    text-align: right;
+    font-weight: bold;
 }
 
 .course_item-description {
-  padding: 1rem;
-  flex-grow: 1;
+    padding: 1rem;
+    flex-grow: 1;
 }
-.courses_item-button{
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.courses_item-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 #about-course {
-  text-decoration: none;
-  width: 100%;
-  padding:  0.5rem;
-  background-color: white;
-  color: black;
-  border-radius: 0.8rem;
-  margin: 0.5rem;
-  text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: white;
+    color: black;
+    border-radius: 0.8rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+/* Раздел вопросов */
+.questions-page {
+    background: url("../assets/images/banner-background.png") center/cover no-repeat; 
+    padding: 50px 20px;
+    text-align: center;
+    min-height: 100vh; 
+    box-sizing: border-box; 
+    margin-top: 5rem;
+    height: fit-content;
+}
+
+.questions-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.questions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    max-width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.question-item {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.question-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: #2962ff; 
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.question-item p {
+    margin: 5px 0;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .contacts_text {
+        padding: 0 1rem;
+    }
+    .contacts-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .courses-list_items {
+        padding: 0 1rem;
+    }
+    .question-item {
+        width: 100%;
+    }
 }
 </style>
