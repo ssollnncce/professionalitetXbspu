@@ -48,7 +48,9 @@ export default {
         await api.post('/logout', {}, { withCredentials: true });
 
         localStorage.removeItem('auth_token');
-        Cookies.remove('XSRF-TOKEN', { domain: 'profxbspu.ssollnncce.ru' });
+        Object.keys(Cookies.get()).forEach((name) => { 
+          Cookies.remove(name, { path: '/', domain: '.ssollnncce.ru' });
+        });
         this.$router.push('/login');
       } catch (error) {
         console.log('Ошибка при выходе из системы:', error);
