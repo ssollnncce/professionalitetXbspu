@@ -52,6 +52,12 @@ export default {
           <li class="nav-item">
             <RouterLink to="/courses" class="nav-link">Курсы</RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink to="/teachers" class="nav-link">Преподаватели</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/contacts" class="nav-link">О нас</RouterLink>
+          </li>
         </ul>
       </div>
       <div class="d-flex">
@@ -80,24 +86,49 @@ export default {
 .navbar {
   padding: 0;
 }
+
 .custom-header {
   background-color: #0040C1;
-  padding: 1rem 156px;
+  padding: 1rem 1rem; /* Уменьшите отступы для мобильных устройств */
   min-height: 100%;
+  display: flex; /* Используйте Flexbox */
+  flex-direction: row; /* Расположите элементы в строку */
+  align-items: center; /* Центрируйте элементы по вертикали */
 }
-.navbar-nav .nav-item a{
+
+.navbar-nav .nav-item a {
   padding: 0.5rem;
   color: #fff;
 }
+
 .navbar-nav .nav-item a.router-link-active {
   background-color: #3367CC;
   border-radius: 0.5rem;
 }
+
 .login-link {
   color: white;
 }
+
 .user-menu-btn {
   border: none;
   color: white;
+}
+
+/* Добавьте медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: row; /* Расположите навигацию в строку */
+    justify-content: center; /* Центрируйте навигацию */
+    width: 100%; /* Задайте ширину 100% для навигации */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 10px; /* Добавьте отступы между элементами навигации */
+  }
+
+  .custom-header {
+    flex-wrap: wrap; /* Позвольте элементам переноситься на новую строку при необходимости */
+  }
 }
 </style>

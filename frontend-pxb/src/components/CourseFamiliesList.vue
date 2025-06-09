@@ -51,29 +51,42 @@ export default {
 <style scoped>
 @import '../assets/styles/variables.css';
 
-
-  .families-list{
+.families-list {
     background: white;
     color: black;
     padding: 1rem;
-  }
-  .families-list h2{
+}
+
+.families-list h2{
     font-size: var(--font-size-s);
-  }
-  .course-family_link{
+}
+
+.course-family_link{
     padding: 0.4rem;
     font-size: var(--font-size-xs);
     cursor: pointer;
     margin: 0 0 0.5rem 0;
-  }
-  .course-family_link:hover{
+}
+
+.course-family_link:hover{
     color: var(--light-primary-color);
     text-decoration: underline;
     transition: 0.2s;
-  }
-  .course-family_link.active{
+}
+
+.course-family_link.active{
     color: var(--primary-color);
     background: var(--selected-color);
     border-radius: 0.3rem
-  }
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .families-list {
+        padding: 0.5rem; /* Уменьшите отступы на мобильных устройствах */
+    }
+    .course-family_link {
+        font-size: var(--font-size-xs); /* Уменьшите размер шрифта на мобильных устройствах */
+    }
+}
 </style>
