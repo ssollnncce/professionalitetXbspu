@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1c75a07-2759-4044-ad5e-9e4220c0be14" name="Changes" comment="empty" />
+    <list default="true" id="a1c75a07-2759-4044-ad5e-9e4220c0be14" name="Changes" comment="empty">
+      <change afterPath="$PROJECT_DIR$/frontend-pxb/src/views/NotFound.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-pxb/app/Models/CourseFamily.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend-pxb/app/Models/CourseFamily.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-pxb/app/Models/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend-pxb/app/Models/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-pxb/app/MoonShine/Layouts/MoonShineLayout.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend-pxb/app/MoonShine/Layouts/MoonShineLayout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-pxb/app/Notifications/CustomResetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend-pxb/app/Notifications/CustomResetPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-pxb/app/Providers/MoonShineServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend-pxb/app/Providers/MoonShineServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-pxb/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-pxb/src/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend-pxb/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend-pxb/src/router/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,21 +25,28 @@
     <pharConfigPath>$PROJECT_DIR$/backend-pxb/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ssollnncce"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ssollnncce&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:ssollnncce/professionalitetXbspu.git",
-    "accountId": "ce920555-66c8-4040-9440-135349c25f13"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:ssollnncce/professionalitetXbspu.git&quot;,
+    &quot;accountId&quot;: &quot;ce920555-66c8-4040-9440-135349c25f13&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/backend-pxb/vendor/league/flysystem" />
@@ -116,9 +134,9 @@
       <path value="$PROJECT_DIR$/backend-pxb/vendor/symfony/http-kernel" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2yBqphe0S1QXxmUdWw1RJlICltp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -130,6 +148,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "/Users/ssollnncce/Documents/Programming_Projects/professionalitet_x_bspu",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -139,6 +158,11 @@
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -163,6 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749318499066</updated>
       <workItem from="1749318500158" duration="22015000" />
+      <workItem from="1749502305901" duration="421000" />
     </task>
     <task id="LOCAL-00001" summary="empty">
       <option name="closed" value="true" />

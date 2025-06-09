@@ -18,6 +18,8 @@ use MoonShine\Menu\MenuItem;
 use App\MoonShine\Resources\CourseResource;
 use App\MoonShine\Resources\CourseApplicationResource;
 use App\MoonShine\Resources\CourseSignupResource;
+use App\MoonShine\Resources\CourseFamiliesResource;
+use App\MoonShine\Resources\TeacherResource;
 
 class MoonShineServiceProvider extends ServiceProvider
 {
@@ -36,6 +38,8 @@ class MoonShineServiceProvider extends ServiceProvider
                 CourseResource::class,
                 CourseApplicationResource::class,
                 CourseSignupResource::class,
+                CourseFamiliesResource::class,
+                TeacherResource::class,
             ])
             ->pages([
                 ...$config->getPages(),

@@ -37,6 +37,12 @@ export default {
             <li class="nav-item">
               <RouterLink to="/courses" class="nav-link">Курсы</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink to="/teachers" class="nav-link">Преподаватели</RouterLink>
+            </li>
+            <li class="nav-item">
+              <RouterLink to="/contacts" class="nav-link">О нас</RouterLink>
+            </li>
           </ul>
         </div>
         <div class="footer-contacts col-md-6">
