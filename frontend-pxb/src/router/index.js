@@ -12,6 +12,7 @@ import changePassword from "@/components/ChangePassword.vue";
 import CoursesView from "@/views/CoursesView.vue";
 import TeachersListView from "@/views/TeachersListView.vue";
 import ContactsView from "@/views/ContactsView.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -84,7 +85,12 @@ const router = createRouter({
       path: '/contacts',
       name: 'contacts',
       component: ContactsView,
-    }
+    },
+    {
+      path: '/:pathMatch(.*)*', // Это ловит все несуществующие пути
+      name: 'NotFound',
+      component: NotFound,
+    },
   ],
 })
 

@@ -38,7 +38,11 @@ class CustomResetPassword extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+<<<<<<< HEAD
         $url = 'profxbspu.ssollnncce.ru' . '/password-reset/'.$this->token.'?email='.$this->email;
+=======
+        $url = 'http://profxbspu.ssollnncce.ru' . '/password-reset/'.$this->token.'?email='.$this->email;
+>>>>>>> dev
 
         return (new MailMessage)
             ->subject('Восстановление пароля на портале Профессионалитет X БГПУ')
