@@ -17,7 +17,7 @@ api.interceptors.request.use((config) => {
   const token = localStorage.getItem('auth_token');
 
   if (csrfToken) {
-    config.headers['X-XSRF-TOKEN'] = csrfToken;
+    config.headers['XSRF-TOKEN'] = csrfToken;
   }
 
   if (token) {
