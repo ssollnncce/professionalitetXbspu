@@ -13,11 +13,11 @@ const web = axios.create({
 
 api.interceptors.request.use((config) => {
   // получаем токен из cookie
-  const csrfToken = Cookies.get('professionalitet_x_bspu_session');
+  const csrfToken = Cookies.get('XSRF-TOKEN');
   const token = localStorage.getItem('auth_token');
 
   if (csrfToken) {
-    config.headers['XSRF-TOKEN'] = csrfToken;
+    config.headers['X-XSRF-TOKEN'] = csrfToken;
   }
 
   if (token) {
