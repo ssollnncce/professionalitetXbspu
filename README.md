@@ -16,3 +16,7 @@
 **Центр Педагогических компетенций Профессионалитет.**  
 Design (Behance): [egielf](https://www.behance.net/egielf)  
 Developer (GitHub): [ssollnncce](https://github.com/ssollnncce)  
+
+## Демонстрация проекта:
+
+https://github.com/user-attachments/assets/00f00e19-dcfc-445f-a8c1-9022a643fc69
